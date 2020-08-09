@@ -19,9 +19,9 @@ def threeSum(nums):
                 left += 1
                 right -= 1
 
-                while left < right and nums[left] == nums[right]:
+                while left < right and nums[left] == nums[left+1]:
                     left += 1
-                while left < right and nums[right] == nums[left]:
+                while left < right and nums[right] == nums[right-1]:
                     right -= 1
 
             elif currSum < 0: 
