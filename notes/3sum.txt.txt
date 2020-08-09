@@ -1,0 +1,9 @@
+[
+
+1.- sort the array
+2.- three pointers: curr, left which is next to current, and right at the end.
+3.- is curr + l + r = t = 0? 
+4.- move L pointer one space to the right
+5.- if l = r, we move curr one space to the right
+6.- if we find a solution, we move both pointer one space to the right and one to the left respectively
+7.- if pointers overlap or pass each other, that's the breaking point
