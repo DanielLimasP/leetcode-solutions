@@ -1,32 +1,29 @@
 def betterSolution(n):
-    dict = {
-        '1': 'I',
-        '4': 'IV',
-        '5': 'V',
-        '9': 'IX',
-        '10': 'X',
-        '40': 'XL',
-        '50': 'L',
-        '90': 'XC',
-        '100': 'C',
-        '400': 'CD',
-        '500': 'D',
-        '900': 'CM',
-        '1000': 'M'
-    }
+    val = [
+        1000, 900, 500, 400,
+        100, 90, 50, 40,
+        10, 9, 5, 4,
+        1
+    ]
 
-    i = 0
+    sym = [
+        "M", "CM", "D", "CD",
+        "C", "XC", "L" , "XL",
+        "X", "IX", "V", "IV",
+        "I"
+    ]
+
     roman = ""
-    strn = str(n)
+    i = 0
 
-    while i < len(str(n)):
-        if i+1 < len(str(n)) and strn[i:i+2] in dict:
-            roman += dict[strn[i:i+2]]
-            i += 2
-        else: 
-            roman += dict[strn[i]]
-            i += 1
+    while n > 0: 
+        for digit in range(n // val[i]):
+            roman += sym[i]
+            n -= val[i]
+        i += 1
+
     return roman
+
 
 
 def int2roman(n):
@@ -103,4 +100,6 @@ def int2roman(n):
     return rom[::-1]
 
 print(int2roman(1994))
-print(betterSolution(994))
+print(betterSolution(1))
+print(betterSolution(4000))
+print(betterSolution(2020))

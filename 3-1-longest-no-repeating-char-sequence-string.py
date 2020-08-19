@@ -2,14 +2,14 @@ def findSubsequence(word):
     wordDict = {}
     longSub = ""
     index = 0
-    for i in word:
-        if i in wordDict:
-            wordDict[i] = False
+    for letter in word:
+        if letter in wordDict:
+            wordDict[letter] = False
         else:
-            wordDict[i] = True
+            wordDict[letter] = True
             #print(dict)
             index += 1
-            longSub = longSub + i
+            longSub = longSub + letter
     print(longSub)
     #print(wordDict)
     #print(word)

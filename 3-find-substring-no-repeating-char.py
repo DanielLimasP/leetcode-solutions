@@ -5,16 +5,16 @@ def findSubstring(word):
     subDict = {}
     auxDict = {}
     substring = ""
-    for i in word:
-        if i in subDict:
+    for letter in word:
+        if letter in subDict:
             subDict = {}
             auxDict[substring] = subLength
             subLength = 0
             substring = ""
         else: 
-            subDict[i] = True
+            subDict[letter] = True
             subLength += 1
-            substring = substring + i
+            substring = substring + letter
             auxDict[substring] = subLength
             #print(substring)
     print("The longest substring is: "+max(auxDict, key = auxDict.get))
