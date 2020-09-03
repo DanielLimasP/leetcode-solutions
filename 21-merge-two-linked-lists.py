@@ -36,24 +36,44 @@ class SimpleLinkedList:
             self.insertNode(node)
 
     # This function is the solution to problem 21
+    # https://www.youtube.com/watch?v=GfRQvf7MB3k
     def mergelists(self, otherList):
-        aux = self.first
-        aux2 = otherList.first
+        l1 = self.first
+        l2 = otherList.first
+        curr = None
 
-        while aux != None:
-            if aux == None:
-                break 
-            print(aux.val)
-            aux = aux.next
+        if l1.val <= l2.val:
+            curr = l1
+            l1 = l1.next
+        else:
+            curr = l2
+            l2 = l2.next
 
+        dummy = curr
+
+        while l1 and l2:
+            if l1.val <= l2.val:
+                curr.next = l1
+                curr = l1
+                l1 = curr.next
+            else:
+                curr.next = l2
+                curr = l2
+                l2 = curr.next
             
+        if not l1:
+            curr.next = l1
+        if not l2:
+            curr.next = l2
+
+        return dummy
 
 if __name__ == "__main__":
     testList = SimpleLinkedList()
-    testList.createList([1, 2, 3, 4, 5])
+    testList.createList([1, 3, 5, 7, 9])
 
     otherList = SimpleLinkedList()
-    otherList.createList([1, 2, 3, 4, 5])
+    otherList.createList([2, 4, 6, 8, 10])
     #testList.iterateList(testList.first)
 
-    testList.mergelists(otherList)
+    testList.iterateList(testList.mergelists(otherList))
