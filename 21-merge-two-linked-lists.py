@@ -42,6 +42,7 @@ class SimpleLinkedList:
         l2 = otherList.first
         curr = None
 
+        # First comparison to see where the dummy head will begin
         if l1.val <= l2.val:
             curr = l1
             l1 = l1.next
@@ -51,6 +52,7 @@ class SimpleLinkedList:
 
         dummy = curr
 
+        # Iterate through both lists making comparisons and rewiring nodes
         while l1 and l2:
             if l1.val <= l2.val:
                 curr.next = l1
