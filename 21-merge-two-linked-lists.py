@@ -62,11 +62,6 @@ class SimpleLinkedList:
                 curr.next = l2
                 curr = l2
                 l2 = curr.next
-            
-        if not l1:
-            curr.next = l1
-        if not l2:
-            curr.next = l2
 
         return dummy
 

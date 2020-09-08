@@ -1,11 +1,11 @@
 # solved with the help of leetcode
 def threeSumClosest(nums, target):
     nums.sort()
+    # Arbitrary choice
     diff = float('inf')
 
     for i in range(len(nums)):
-
-        # Arbitrary choice
+    
         left = i+1
         right = len(nums)-1
 

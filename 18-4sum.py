@@ -3,8 +3,11 @@
 def fourSum(nums, target):
     def ksum(start, k, target):
         res = []
+        # This sentence here is validation to see wheter or not the numbers 
+        # in the array add up to the target
         if len(nums) == 0 or nums[0] * k > target or target > nums[-1] * k:
             return res
+        # if k is already equal to two...
         if k == 2:
             return twoSum(nums, target)
         for i in range(len(nums)):
