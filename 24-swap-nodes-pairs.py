@@ -1,9 +1,10 @@
 # Divide and conquer approach
 # Definition for singly-linked list.
 class ListNode:
-     def __init__(self, val=0, next=None):
-         self.val = val
-         self.next = next
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
 
 class SimpleLinkedList:
     def __init__(self, first=None, last=None):
@@ -12,7 +13,7 @@ class SimpleLinkedList:
     def isEmpty(self):
         if self.first is None:
             return True
-        else: 
+        else:
             return False
 
     def insertNode(self, node):
@@ -30,7 +31,7 @@ class SimpleLinkedList:
         else:
             print(listNode.val)
             self.iterateList(listNode.next)
-    
+
     def createList(self, numList):
         for i in numList:
             node = ListNode(i)
@@ -62,10 +63,10 @@ class SimpleLinkedList:
             current = current.next
         return newHead
 
+
 if __name__ == "__main__":
     testList = SimpleLinkedList()
-    testList.createList([1, 3, 5, 7, 9])
+    testList.createList([1, 2, 3, 4])
     testList.iterateList(testList.first)
-
-
-
+    print("Other list")
+    testList.iterateList(testList.swapPairs(testList.first))
