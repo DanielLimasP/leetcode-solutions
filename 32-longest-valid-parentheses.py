@@ -1,3 +1,4 @@
+# I might start commenting like this...
 # longest substring of valid parentheses
 def solution_prob_32(s):
     # Longest substring
@@ -22,7 +23,8 @@ def solution_prob_32(s):
             else:
                 # Else, calculate by subtracting 
                 # the current index - the last index in the stack 
-                longest_sub = i - i_stack[-1]
+                if longest_sub < i - i_stack[-1]:
+                    longest_sub = i - i_stack[-1]
 
     # Return the longest sub
     return longest_sub
@@ -31,7 +33,7 @@ if __name__ == "__main__":
     # Test string returns a 12
     # It works...
     test_string = ")(()()()()())"
-    test_string_1 = "()"
+    test_string_1 = "(()))())("
     test_string_2 = "()()"
     test_string_3 = "((()))"
     print(solution_prob_32(test_string))

@@ -1,0 +1,9 @@
+if (n.isFinal()){
+    lst.add(n);
+    return;
+}
+
+n.generateChildren();
+for (int i = 0; i < n.getChildrenSize(); i++){
+    deptFSMulti(n.gotChild());
+}
