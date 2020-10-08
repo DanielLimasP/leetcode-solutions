@@ -20,10 +20,10 @@ def other_binary_search(nums, target):
 
     while left <= right:
         mid = (left + right) // 2
-        print("index: {} number: {}".format(mid, nums[mid]))
-        print(nums)
+        #print("index: {} number: {}".format(mid, nums[mid]))
+        #print(nums)
         if target == nums[mid]:
-            print(mid)
+            #print(mid)
             return mid
         if nums[left] <= nums[mid]:
             if target > nums[mid] or target < nums[left]:
