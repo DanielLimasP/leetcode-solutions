@@ -34,14 +34,6 @@ def trap_rain_water_two_pointers(height):
             else:
                 answer += max_right - height[right]
             right -= 1
-        print("""
-        
-        answer: {}
-        max_left: {}
-        max_right: {}
-        left: {}
-        right: {}
-        """.format(answer, max_left, max_right, left, right))
     return answer
 
 def my_attempt(height):
