@@ -23,6 +23,8 @@ class Solution:
         return res
 
     def dfs(self, nums, path, res):
+        print(path)
+        print(nums)
         if not nums:
             res.append(path)
             #return # backtracking
