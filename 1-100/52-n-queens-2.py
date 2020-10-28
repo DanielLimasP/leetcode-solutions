@@ -1,5 +1,4 @@
-# Leetcode problem #51: N-Queens problem
-# https://leetcode.com/problems/n-queens/discuss/873235/Python-easiest-to-understand-dfs-solution
+# Leetcode problem #52: N-Queens problem
 def n_queens(n):
     board = [['.' for i in range(n)] for j in range(n)]
     queens_in_col = [0]*n # To keep track of the number of queens in each queens_in_col
@@ -7,7 +6,7 @@ def n_queens(n):
     queens_in_right_d = [0]*(2*n-1) # ibid
     result = []
     backtrack(n, 0, board, result, queens_in_col, queens_in_left_d, queens_in_right_d)
-    return result
+    return len(result)
 
 def backtrack(n, row, board, result, col_queens, left_queens, right_queens):
     if row == n:
@@ -28,22 +27,5 @@ def backtrack(n, row, board, result, col_queens, left_queens, right_queens):
             left_queens[row-col] = 0
             right_queens[row+col] = 0
 
-def solveNQueens(n):
-        # i is column index
-        # left: left diagonal: \ level-i
-        # right: right diagonal: / level+i
-        col = [0]*n # not occupied column
-        left = [0]*(2*n-1) # number of left diagonal
-        right = [0]*(2*n-1)
-        board = [['.' for x in range(n)] for y in range(n)] 
-        result = []
-        otherbackTrack(n, 0, board, col, left, right, result)
-        return result
-
 if __name__ == "__main__":
-    for solution in solveNQueens(8):
-        for row in solution:
-            print(row)
-        print()
-
-    
+    print(n_queens(8))
