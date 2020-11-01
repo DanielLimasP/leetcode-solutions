@@ -20,5 +20,12 @@ def first_missing_positive(nums):
             return i
     return n
 
+def other_solution(nums):
+    i = 0
+    while True:
+        if i not in nums:
+            return i
+        i += 1
+
 if __name__ == "__main__":
     print(first_missing_positive([3, 4, -1, 1]))
