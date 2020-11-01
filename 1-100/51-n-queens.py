@@ -28,18 +28,6 @@ def backtrack(n, row, board, result, col_queens, left_queens, right_queens):
             left_queens[row-col] = 0
             right_queens[row+col] = 0
 
-def solveNQueens(n):
-        # i is column index
-        # left: left diagonal: \ level-i
-        # right: right diagonal: / level+i
-        col = [0]*n # not occupied column
-        left = [0]*(2*n-1) # number of left diagonal
-        right = [0]*(2*n-1)
-        board = [['.' for x in range(n)] for y in range(n)] 
-        result = []
-        otherbackTrack(n, 0, board, col, left, right, result)
-        return result
-
 if __name__ == "__main__":
     for solution in solveNQueens(8):
         for row in solution:
