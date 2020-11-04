@@ -17,7 +17,6 @@ def insert_interval(intervals, new_interval):
 
     return new_intervals
 
-    
 if __name__ == "__main__":
     print(insert_interval([[1,2],[3,5],[6,7],[8,10],[12,16]], [4,8]))
 
