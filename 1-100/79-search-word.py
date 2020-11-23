@@ -1,6 +1,7 @@
+#https://leetcode.com/problems/word-search/discuss/27665/Python-simple-dfs-solution
 def search_word(board, word):
     if not word:
-        return False
+        return True
     if not board:
         return False
 
@@ -9,14 +10,14 @@ def search_word(board, word):
             if exist_helper(board, word, i, j):
                 return True
 
-    return False
-
 def exist_helper(board, word, i, j):
     print(word)
     if board[i][j] == word[0]:
         if not word[1:]:
             return True
+
         board[i][j] = " "
+
         if i > 0 and exist_helper(board, word[1:], i-1, j):
             return True
         if i < len(board)-1 and exist_helper(board, word[1:], i+1, j):
@@ -25,7 +26,10 @@ def exist_helper(board, word, i, j):
             return True
         if j < len(board[0])-1 and exist_helper(board, word[1:], i, j+1):
             return True
+
         board[i][j] = word[0]
+        return False
+
     else:
         return False
 
